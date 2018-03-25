@@ -1,0 +1,13 @@
+<div [ngClass]="{'list-group-item':true,
+                  'col-md-8':true,
+                  'list-group-item-success': unPost.loveIts > 0,
+                  'list-group-item-danger': unPost.loveIts < 0}">
+    <div class="row">
+    <h4 class="col-md-6" [ngStyle]="{color:getColor()}">{{unPost.title}}</h4>
+    <div class="col-md-6 text-right">{{unPost.created_at | date:'short'}}</div>
+    </div>
+    <p>{{unPost.content}}</p>
+    <button class="btn btn-success" (click)= "onAddLove()">Love it!</button>
+    <button class ="btn btn-danger" (click)= "onAddDoNotLove()">Don't love it!</button>
+</div>
+<br/><br/>
